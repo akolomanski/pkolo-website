@@ -1,7 +1,57 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const workTemplate = path.resolve(`src/templates/workTemplate.js`)
+  
+  const worksQuery = await graphql(`
+    {
+    pkolocms{
+        works: worksConnection(first: 100) {
+              edges {
+                node {
+                  status
+                  updatedAt
+                  createdAt
+                  id
+                  name
+                  description
+                  photos {
+                    status
+                    updatedAt
+                    createdAt
+                    id
+                    url
+                    handle
+                    fileName
+                    height
+                    width
+                    size
+                    mimeType
+                  }
+                  thumbnail{
+                    url
+                  }
+                  slug
+                }
+              }
+            }
+            
+          
+          
+    }}
+  `);
+
+    
+   
+   worksQuery.data.pkolocms.works.edges.forEach(work => {
+       createPage({
+           path: work.node.slug,
+           component: workTemplate,
+           context: {
+               data: work.node,
+           }
+       })
+   });
+   
+  }
