@@ -1,3 +1,7 @@
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -14,7 +18,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true,
+        defaultQuality: 100,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -28,14 +39,11 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: "gatsby-source-contentful",
       options: {
-        // This type will contain remote schema Query type
-        typeName: "PKOLOCMS",
-        // This is field under which it's accessible
-        fieldName: "pkolocms",
-        // Url to query from
-        url: "https://api-euwest.graphcms.com/v1/cjtytz1idbenb01ekbg9wlqwt/master",
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+				// Learn about environment variables: https://gatsby.dev/env-vars
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       },
     },
     {

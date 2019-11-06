@@ -24,36 +24,29 @@ const Works = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				allSitePage(
-					filter: {
-						component: {
-							eq: "/home/andrzej/Documents/Code/pkolo page/pkolo-website/src/templates/workTemplate.js"
+				works: allContentfulWork {
+				  edges {
+					node {
+					  slug
+					  thumbnail {
+						file {
+						  url
 						}
+					  }
 					}
-				) {
-					edges {
-						node {
-							path
-							context {
-								data {
-									name
-									thumbnail {
-										url
-									}
-								}
-							}
-						}
-					}
+				  }
 				}
-			}
+			  }
+			  
+			  
 		`}
-		render={({ allSitePage: { edges } }) => (
+		render={({ works: { edges } }) => (
 			<StyledWrapper>
 				<ul className="container">
 					{edges.map((work) => (
 						<li className="item">
-							<Link key={work.node.path} to={work.node.path}>
-								<img src={work.node.context.data.thumbnail.url} className="thumbnail" alt="thumbnail" />
+							<Link key={`/${work.node.slug}`} to={`/${work.node.slug}`}>
+								<img src={work.node.thumbnail.file.url} className="thumbnail" alt="thumbnail" />
 							</Link>
 						</li>
 					))}
