@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Slider from '../components/Slider';
+import  Layout  from '../components/Layout';
 
 const StyledWrapper = styled.div`
 	margin-top: 50px;
@@ -16,19 +16,20 @@ const StyledWrapper = styled.div`
 	.text-container {
 		font-size: 2.5em;
 		font-family: 'Barlow';
-		
 	}
 `;
 
 const workTemplate = ({ data: { work } }) => (
-	<StyledWrapper>
-		<Link to="/works">Go Back</Link>
-		<Slider props={work.photos} />
-		<div className='text-container'>
-			<h2>{work.title}</h2>
-			<p>{work.description.description}</p>
-		</div>
-	</StyledWrapper>
+	<Layout>
+		<StyledWrapper>
+			<Link to="/works">Go Back</Link>
+			<Slider props={work.photos} />
+			<div className="text-container">
+				<h2>{work.title}</h2>
+				<p>{work.description.description}</p>
+			</div>
+		</StyledWrapper>
+	</Layout>
 );
 
 export const query = graphql`
