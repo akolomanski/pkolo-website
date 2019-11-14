@@ -8,16 +8,22 @@ const StyledWrapper = styled.div`
 	.container {
 		margin-top: 100px;
 		display: inline-grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
-		grid-gap: 50px 100px;
+		grid-gap: 50px 150px;
 		list-style: none;
 		justify-items: space-around;
 
 		img {
-			height: 300px;
+			height: 350px;
 		}
 	}
+	@media only screen and (max-width: 800px) {
+			.container{
+				display: flex;
+				flex-direction: column;
+			}
+		}
 `;
 
 const Works = () => (
@@ -25,20 +31,18 @@ const Works = () => (
 		query={graphql`
 			query {
 				works: allContentfulWork {
-				  edges {
-					node {
-					  slug
-					  thumbnail {
-						file {
-						  url
+					edges {
+						node {
+							slug
+							thumbnail {
+								file {
+									url
+								}
+							}
 						}
-					  }
 					}
-				  }
 				}
-			  }
-			  
-			  
+			}
 		`}
 		render={({ works: { edges } }) => (
 			<StyledWrapper>
@@ -56,3 +60,5 @@ const Works = () => (
 	/>
 );
 export default Works;
+
+

@@ -6,7 +6,8 @@ import '@reach/dialog/styles.css';
 const StyledWrapper = styled.div`
 	button {
 		border: none;
-		background-color: white;
+		background-color: #444444;
+		color: white;
 		cursor: pointer;
 		font-family: 'Barlow';
 		font-size: 1.8rem;
@@ -35,12 +36,14 @@ const MyDialogContent = styled(DialogContent)`
 	input{
 		margin-top: 20px;
 		border: none;
-		border-bottom: 3px solid hsla(0, 0%, 0%, .1); 
+		border-bottom: 3px solid hsla(0, 0%, 100%, .1); 
 		width: 40vw;
 		font-family: 'Barlow';
+		background-color: hsla(0, 0%, 20%, 1);
 		
 		&[type=submit]{
-			background-color: hsla(0, 0%, 0%, .1);
+			background-color: hsla(0, 0%, 100%, .1);
+			color:hsla(0, 0%, 100%, 1);
 			border: none;
 			padding: 10px 20px;
 			width: 200px;
@@ -50,10 +53,11 @@ const MyDialogContent = styled(DialogContent)`
 	textarea{
 		margin-top: 20px;
 		border: none;
-		border-bottom: 3px solid hsla(0, 0%, 0%, .1); 
+		border-bottom: 3px solid hsla(0, 0%, 100%, .1); 
 		width: 40vw;
 		resize: none;
 		font-family: 'Barlow';
+		background-color: hsla(0, 0%, 20%, 1);
 	}
    
     button{
@@ -63,6 +67,7 @@ const MyDialogContent = styled(DialogContent)`
         right: 26%;
         top: 11%;
         font-size: 25px;
+		color: white;
         cursor: pointer;
     }
 
@@ -78,8 +83,8 @@ const Contact = () => {
 		<StyledWrapper>
 			<button onClick={open}>Kontakt</button>
 
-			<DialogOverlay style={{ background: 'hsla(0, 100%, 100%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
-				<MyDialogContent style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)' }}>
+			<DialogOverlay style={{ background:  'hsla(0, 0%, 27%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
+				<MyDialogContent style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)',  background: 'hsla(0, 0%, 20%, 1)' }}>
 					<button onClick={close}>X</button>
 					<h3>Kontakt</h3>
 					<form action="">

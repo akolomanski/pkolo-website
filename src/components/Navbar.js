@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import About from './About';
 import Contact from './Contact';
 
+
 const GlobalStyles = createGlobalStyle`
   body {
     
@@ -15,9 +16,11 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const StyledWrapper = styled.div`
+	
 	height: 50px;
 	margin-top: 0;
-
+  	display: flex;
+	justify-items: flex-end;
 	ul {
 		list-style: none;
 		margin: 0 auto;
@@ -26,22 +29,25 @@ const StyledWrapper = styled.div`
 		align-items: center;
 		max-width: 300px;
 		margin-top: 0;
-		margin-left: auto;
-		margin-right: 100px;
+		
+		
         
 	}
 `;
 
-const Navbar = () => {
+const Navbar = ({props}) => {
+
+
 	return (
 		<div>
+			{console.log(props)}
 			<GlobalStyles />
 			<StyledWrapper>
 				<ul>
-					<li>
+					<li key="about">
 						<About />
 					</li>
-					<li>
+					<li key="contact">
 						<Contact />
 					</li>
 				</ul>

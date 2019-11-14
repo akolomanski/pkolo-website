@@ -1,27 +1,16 @@
 import React from 'react';
-import Works from '../components/Works/Works'
-import {createGlobalStyle} from 'styled-components';
+import Works from '../components/Works/Works';
+import Layout from '../components/Layout';
+import GlobalStyles from '../components/Global'
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    
-    padding: 0;
-    margin: 0;
-  }
-  *, *::before, *::after{
-    box-sizing: border-box;
-  }
-`;
 
 
 const works = () => (
-    <>  
-      <GlobalStyles />
-      <Works />
-      
-    </> 
-  )
-  
-  
-  export default works
-  
+	<div>
+		<GlobalStyles />
+		<Layout />
+		<Works />
+	</div>
+);
+
+export default works;
