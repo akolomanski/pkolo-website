@@ -14,21 +14,81 @@ const StyledWrapper = styled.div`
 	}
 `;
 
+const MyDialogContent = styled(DialogContent)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;
+    height: auto;
+	font-family: 'Barlow';
+    
+	h3{
+		font-weight: 400;
+		font-size: 30px
+	}
+	form{
+		display: flex;
+		align-items: center;
+    	justify-content: center;
+		flex-direction: column;
+	}
+	input{
+		margin-top: 20px;
+		border: none;
+		border-bottom: 3px solid hsla(0, 0%, 0%, .1); 
+		width: 40vw;
+		font-family: 'Barlow';
+		
+		&[type=submit]{
+			background-color: hsla(0, 0%, 0%, .1);
+			border: none;
+			padding: 10px 20px;
+			width: 200px;
+			cursor: pointer;
+		}
+	}
+	textarea{
+		margin-top: 20px;
+		border: none;
+		border-bottom: 3px solid hsla(0, 0%, 0%, .1); 
+		width: 40vw;
+		resize: none;
+		font-family: 'Barlow';
+	}
+   
+    button{
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 26%;
+        top: 11%;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+	
+`;
+
 const Contact = () => {
-    const [ showDialog, setShowDialog ] = React.useState(false);
+	const [ showDialog, setShowDialog ] = React.useState(false);
 	const open = () => setShowDialog(true);
 	const close = () => setShowDialog(false);
-
 
 	return (
 		<StyledWrapper>
 			<button onClick={open}>Kontakt</button>
 
 			<DialogOverlay style={{ background: 'hsla(0, 100%, 100%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
-				<DialogContent style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)' }}>
-					<p>The overlay styles are a white fade instead of the default black fade.</p>
-					<button onClick={close}>Very nice.</button>
-				</DialogContent>
+				<MyDialogContent style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)' }}>
+					<button onClick={close}>X</button>
+					<h3>Kontakt</h3>
+					<form action="">
+						<input type="text" name="name" id="name" placeholder="Jan Kowalski" />
+						<input type="email" name="email" id="email" placeholder="email@email.pl" />
+						<textarea name="message" id="message" rows="10" placeholder="Twoja wiadomość" />
+						<input type="submit" value="Wyślij" />
+					</form>
+				</MyDialogContent>
 			</DialogOverlay>
 		</StyledWrapper>
 	);

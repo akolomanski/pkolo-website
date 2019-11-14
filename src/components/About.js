@@ -12,24 +12,21 @@ const StyledWrapper = styled.div`
 		font-family: 'Barlow';
 		font-size: 1.8rem;
 		padding: 10px;
-	}
-    [data-reach-dialog-content] {
-        background-color: red;
-    }
-    
+	}    
 `;
 
 const MyDialogContent = styled(DialogContent)`
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: auto;
-    [data-reach-dialog-content] {
-        background-color: red;
-    }
+    
    
     p{
         width: 40%;
         font-size: 1.2rem;
-        margin-top: 100px;
+        margin-top: 1em;
+        
     }
     img{
         width: 60%;
@@ -46,6 +43,7 @@ const MyDialogContent = styled(DialogContent)`
         right: 26%;
         top: 11%;
         font-size: 25px;
+        cursor: pointer;
     }
 `;
 
