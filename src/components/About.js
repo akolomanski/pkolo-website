@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import '@reach/dialog/styles.css';
-import portrait from '../images/portrait-bg.png';
 import GlobalStyles from '../components/Global';
+import AboutPortrait from './AboutPortrait';
 
 const StyledWrapper = styled.div`
-	
 	button {
 		border: none;
 		background-color: #444444;
@@ -15,8 +14,7 @@ const StyledWrapper = styled.div`
 		color: white;
 		font-size: 1.8rem;
 		padding: 10px;
-	}  
-	
+	}
 `;
 
 const MyDialogContent = styled(DialogContent)`
@@ -37,6 +35,9 @@ const MyDialogContent = styled(DialogContent)`
         margin-top: 1em;
         
     }
+	.photoWrapper{
+		width: 100%;
+	}
     img{
         width: 60%;
         height: auto;
@@ -59,7 +60,7 @@ const MyDialogContent = styled(DialogContent)`
 		flex-direction: column-reverse;
 		text-align: center;
 		img{
-			width: 100%;
+			width: 50px;
 		}
 		p{
 			width: 100%;
@@ -73,22 +74,28 @@ const About = () => {
 	const close = () => setShowDialog(false);
 
 	return (
-		<>
-		<GlobalStyles />
-		<StyledWrapper>
-			<button onClick={open}>O Autorze</button>
+		<div>
+			<GlobalStyles />
+			<StyledWrapper>
+				<button onClick={open}>O Autorze</button>
 
-			<DialogOverlay style={{ background: 'hsla(0, 0%, 27%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
-				<MyDialogContent style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 27%, 0.33)', background: 'hsla(0, 0%, 20%, 1)' }}>
-					<button onClick={close}>X</button>
-					<p>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, omnis molestiae? Iusto maxime ut ratione dicta! Sapiente iste a quas.
-					</p>
-					<img src={portrait} alt="portret" />
-				</MyDialogContent>
-			</DialogOverlay>
-		</StyledWrapper>
-		</>
+				<DialogOverlay style={{ background: 'hsla(0, 0%, 27%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
+					<MyDialogContent
+						style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 27%, 0.33)', background: 'hsla(0, 0%, 20%, 1)' }}
+					>
+						<button onClick={close}>X</button>
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, omnis molestiae? Iusto
+							maxime ut ratione dicta! Sapiente iste a quas.
+						</p>
+
+						<div className="photoWrapper">
+							<AboutPortrait />
+						</div>
+					</MyDialogContent>
+				</DialogOverlay>
+			</StyledWrapper>
+		</div>
 	);
 };
 

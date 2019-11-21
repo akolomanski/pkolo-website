@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
+
 const StyledWrapper = styled.div`
 	text-align: center;
 
@@ -52,6 +53,7 @@ const Works = () => (
 							<Link key={`/${work.node.slug}`} to={`/${work.node.slug}`}>
 								<img src={work.node.thumbnail.file.url} className="thumbnail" alt="thumbnail" />
 							</Link>
+							
 						</li>
 					))}
 				</ul>
