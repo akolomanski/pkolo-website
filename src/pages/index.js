@@ -54,7 +54,7 @@ const IndexPage = () => (
 				<h1>Piotr Kołomański</h1>
 				<p>Art | Ceramics | Design</p>
 				<Link to="/works">
-					Portfolio
+					Portfolio 
 				</Link>
 			</div>
 		</StyledWrapper>
