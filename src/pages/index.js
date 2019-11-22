@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import backgroundImage from '../images/pkolo_logo.png';
+import backgroundImage from '../images/pkolo_logo.svg';
 import GlobalStyles from '../components/Global';
 
 
@@ -15,7 +15,7 @@ const StyledWrapper = styled.div`
 	background-color: #444444;
 	background-position: bottom left;
 	background-repeat: no-repeat;
-	background-size: 50%;
+	background-size: 30%;
 	.flex-container {
 		display: flex;
 		align-items: flex-end;
