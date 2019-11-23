@@ -49,6 +49,18 @@ const MyDialogContent = styled(DialogContent)`
 			width: 200px;
 			cursor: pointer;
 		}
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  			color: hsla(0, 0%, 100%, .5);
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+  			color: hsla(0, 0%, 100%, .5);
+		}
+		&::-ms-input-placeholder { /* IE 10+ */
+  			color: hsla(0, 0%, 100%, .5);
+		}
+		&::-moz-placeholder { /* Firefox 18- */
+  			color: hsla(0, 0%, 100%, .5);
+		}
 	}
 	textarea{
 		margin-top: 20px;
@@ -58,6 +70,18 @@ const MyDialogContent = styled(DialogContent)`
 		resize: none;
 		font-family: 'Barlow';
 		background-color: hsla(0, 0%, 20%, 1);
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  			color: hsla(0, 0%, 100%, .5);
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+  			color: hsla(0, 0%, 100%, .5);
+		}
+		&::-ms-input-placeholder { /* IE 10+ */
+  			color: hsla(0, 0%, 100%, .5);
+		}
+		&::-moz-placeholder { /* Firefox 18- */
+  			color: hsla(0, 0%, 100%, .5);
+		}
 	}
    
     button{
@@ -83,8 +107,14 @@ const Contact = () => {
 		<StyledWrapper>
 			<button onClick={open}>Kontakt</button>
 
-			<DialogOverlay style={{ background:  'hsla(0, 0%, 27%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
-				<MyDialogContent style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)',  background: 'hsla(0, 0%, 20%, 1)', width: '90vw' }}>
+			<DialogOverlay style={{ background: 'hsla(0, 0%, 27%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
+				<MyDialogContent
+					style={{
+						boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)',
+						background: 'hsla(0, 0%, 20%, 1)',
+						width: '90vw'
+					}}
+				>
 					<button onClick={close}>X</button>
 					<h3>Kontakt</h3>
 					<form action="">
