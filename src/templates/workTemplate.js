@@ -25,11 +25,11 @@ const StyledWrapper = styled.div`
 	}
 	.container {
 		font-size: 1.2em;
-		font-family: 'Barlow';
+		font-family: 'Montserrat';
 	}
 	a {
 		font-size: 1.8rem;
-		font-family: 'Barlow';
+		font-family: 'Montserrat';
 		text-decoration: none;
 		color: white;
 		position: absolute;

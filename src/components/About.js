@@ -11,7 +11,7 @@ const StyledWrapper = styled.div`
 		border: none;
 		background-color: #444444;
 		cursor: pointer;
-		font-family: 'Barlow';
+		font-family: 'Montserrat';
 		color: white;
 		font-size: 1.8rem;
 		padding: 10px;

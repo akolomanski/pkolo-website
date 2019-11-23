@@ -10,7 +10,7 @@ const StyledWrapper = styled.div`
 	width: 100%;
 	height: 100vh;
 	float: right;
-	font-family: 'Barlow';
+	font-family: 'Montserrat';
 	font-size: 2.5vw;
 	background-image: url(${backgroundImage});
 	background-color: #444444;

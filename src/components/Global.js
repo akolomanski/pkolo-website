@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     
     padding: 0;
     margin: 0;
-    font-family: 'Barlow';
+    font-family: 'Montserrat';
     color: white;
     background-color: #444444;
     

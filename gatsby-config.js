@@ -51,7 +51,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Barlow']
+          families: ['Montserrat']
         }
       }
     },
