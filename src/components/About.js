@@ -25,12 +25,10 @@ const MyDialogContent = styled(DialogContent)`
     height: auto;
     background-color: #444444;
 
-	[data-reach-dialog-content]{
-		background-color: #444444;
-	}  
+	
    
     p{
-        width: 40%;
+        width: 50%;
         font-size: 1.2rem;
         margin-top: 1em;
         
@@ -39,7 +37,7 @@ const MyDialogContent = styled(DialogContent)`
 		width: 100%;
 	}
     img{
-        width: 60%;
+        width: 50%;
         height: auto;
         max-height: 100%;
         object-fit: contain;
@@ -51,7 +49,7 @@ const MyDialogContent = styled(DialogContent)`
 		color: white;
         border: none;
         position: absolute;
-        right: 26%;
+        right: 6%;
         top: 11%;
         font-size: 25px;
         cursor: pointer;
@@ -64,6 +62,8 @@ const MyDialogContent = styled(DialogContent)`
 		}
 		p{
 			width: 100%;
+			padding: 20px;
+			text-align: left;
 		}
   	}
 `;
@@ -81,12 +81,23 @@ const About = () => {
 
 				<DialogOverlay style={{ background: 'hsla(0, 0%, 27%, 0.9)' }} isOpen={showDialog} onDismiss={close}>
 					<MyDialogContent
-						style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 27%, 0.33)', background: 'hsla(0, 0%, 20%, 1)' }}
+						style={{
+							boxShadow: '0px 10px 50px hsla(0, 0%, 27%, 0.33)',
+							background: 'hsla(0, 0%, 20%, 1)',
+							width: '90vw'
+						}}
 					>
 						<button onClick={close}>X</button>
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, omnis molestiae? Iusto
-							maxime ut ratione dicta! Sapiente iste a quas.
+							Ur. 19.10.1961. Studia w ASP we Wrocławiu na wydziale ceramiki i szkła. Dyplom z zakresu
+							projektowania ceramiki w 1991 r. Od 1993 roku pracownik dydaktyczny ASP we Wrocławiu.
+							Prowadzi zajęcia dla studentów od III do V roku ceramiki studiów dziennych, oraz zajęcia z
+							projektowania ceramiki użytkowej dla studentów od II do III roku wieczorowych studiów
+							licencjackich, oraz uzupełniających magisterskich studiów wieczorowych. Udział w wielu
+							wystawach zbiorowych i indywidualnych w kraju i za granicą. <br/><br/>Nagrody:<br/> Bronz Award - 3
+							Międzynarodowy Festiwal Ceramiki MINO'92 - Japonia<br/><br/> "GRAND PRIX" ex eqo -Międzynarodowy
+							Konkurs Ceramiki "CEVIDER 93" - VALENCJA - Hiszpania<br/><br/> I miejsce w konkursie "Fason Hotelowy"
+							ZPS "Tułowice - Polska
 						</p>
 
 						<div className="photoWrapper">
