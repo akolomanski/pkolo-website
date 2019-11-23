@@ -59,7 +59,7 @@ const MyDialogContent = styled(animated(DialogContent))`
 		color: white;
         border: none;
         position: absolute;
-        right: 6%;
+        right: 9%;
         top: 11%;
         font-size: 25px;
         cursor: pointer;
@@ -107,7 +107,8 @@ const About = () => {
 									style={{
 										boxShadow: '0px 10px 50px hsla(0, 0%, 27%, 0.33)',
 										background: 'hsla(0, 0%, 20%, 1)',
-										width: '90vw'
+										width: '90vw',
+										maxWidth: '1600px'
 										
 									}}
 								>
