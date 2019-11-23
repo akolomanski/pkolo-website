@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import backgroundImage from '../images/pkolo_logo.svg';
 import GlobalStyles from '../components/Global';
+import {useSpring, animated} from 'react-spring'
 
 
 const StyledWrapper = styled.div`
@@ -48,19 +49,34 @@ const StyledWrapper = styled.div`
 	}
 `;
 
-const IndexPage = () => (
-	<div>
-		<GlobalStyles />
-		<StyledWrapper>
-			<div class="flex-container">
-				<h1>Piotr Kołomański</h1>
-				<p>Art | Ceramics | Design</p>
-				<Link to="/works">
-					Portfolio 
-				</Link>
-			</div>
-		</StyledWrapper>
-	</div>
-);
+const IndexPage = () =>{ 
+	const props = useSpring(
+		
+		{
+		config:{
+			mass: 100,
+			clamp:true
+		},
+		to: async (next, cancel) => {
+		  await next({opacity: 1})
+		  
+		},
+		from: {opacity: 0}
+	  })
+	
+	return(
+		<animated.div style={props}>
+			<GlobalStyles />
+			<StyledWrapper>
+				<div class="flex-container">
+					<h1>Piotr Kołomański</h1>
+					<p>Art | Ceramics | Design</p>
+					<Link to="/works">
+						Portfolio 
+					</Link>
+				</div>
+			</StyledWrapper>
+		</animated.div>)
+};
 
 export default IndexPage;

@@ -107,6 +107,8 @@ const Contact = () => {
 	const open = () => setShowDialog(true);
 	const close = () => setShowDialog(false);
 	const transitions = useTransition(showDialog, null, {
+		unique: true,
+		reset: true,
 		from: { opacity: 0 },
 		enter: { opacity: 1 },
 		leave: { opacity: 0 }
