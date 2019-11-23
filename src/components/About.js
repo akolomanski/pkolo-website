@@ -58,14 +58,11 @@ const MyDialogContent = styled(DialogContent)`
 	@media only screen and (max-width: 800px) {
 		flex-direction: column-reverse;
 		text-align: center;
-		img{
-			padding: 20px;
-			
-		}
+		
 		p{
-			margin-top: -20px;
+			
 			width: 100%;
-			padding: 20px;
+			padding: 0;
 			text-align: left;
 		}
   	}
