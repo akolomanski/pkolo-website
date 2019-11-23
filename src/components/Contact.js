@@ -40,7 +40,7 @@ const MyDialogContent = styled(animated(DialogContent))`
 		border: none;
 		border-bottom: 3px solid hsla(0, 0%, 100%, .1); 
 		width: 70vw;
-		font-family: 'Barlow';
+		font-family: 'Montserrat';
 		background-color: hsla(0, 0%, 20%, 1);
 		
 		&[type=submit]{
@@ -70,7 +70,7 @@ const MyDialogContent = styled(animated(DialogContent))`
 		border-bottom: 3px solid hsla(0, 0%, 100%, .1); 
 		width: 70vw;
 		resize: none;
-		font-family: 'Barlow';
+		font-family: 'Montserrat';
 		background-color: hsla(0, 0%, 20%, 1);
 		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   			color: hsla(0, 0%, 100%, .5);
