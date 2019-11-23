@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-
+import { useSpring, animated } from 'react-spring';
 import Layout from '../components/Layout';
 
 const StyledWrapper = styled.div`
@@ -27,14 +27,13 @@ const StyledWrapper = styled.div`
 		font-size: 1.2em;
 		font-family: 'Barlow';
 	}
-	a{
+	a {
 		font-size: 1.8rem;
 		font-family: 'Barlow';
 		text-decoration: none;
 		color: white;
 		position: absolute;
 		top: 8px;
-
 	}
 
 	@media only screen and (max-width: 800px) {
@@ -48,38 +47,53 @@ const StyledWrapper = styled.div`
 		p {
 			padding: 0;
 		}
-		a{
+		a {
 			top: 45px;
 			left: 40vw;
 		}
-		.photo{
+		.photo {
 			width: 100%;
 		}
 	}
 `;
 
-const workTemplate = ({ data: { work } }) => (
-	<Layout work={true}>
-		<StyledWrapper>
-			<div className="container">
-				<div className="photo">
-					<Link to="/works">Wstecz</Link>
-					<h2>{work.title}</h2>
-					<p>{work.description.description}</p>
-				</div>
-			</div>
-			{work.photos.map((photo) => {
-				return (
+const WorkTemplate = ({ data: { work } }) => {
+	const props = useSpring({
+		config: {
+			mass: 100,
+			clamp: true
+		},
+		to: async (next, cancel) => {
+			await next({ opacity: 1 });
+		},
+		from: { opacity: 0 }
+	});
+
+	return (
+		<animated.div style={props}>
+			<Layout work={true}>
+				<StyledWrapper>
 					<div className="container">
 						<div className="photo">
-							<Img key={photo.fluid.src} fluid={photo.fluid} />
+							<Link to="/works">Wstecz</Link>
+							<h2>{work.title}</h2>
+							<p>{work.description.description}</p>
 						</div>
 					</div>
-				);
-			})}
-		</StyledWrapper>
-	</Layout>
-);
+					{work.photos.map((photo) => {
+						return (
+							<div className="container">
+								<div className="photo">
+									<Img key={photo.fluid.src} fluid={photo.fluid} />
+								</div>
+							</div>
+						);
+					})}
+				</StyledWrapper>
+			</Layout>
+		</animated.div>
+	);
+};
 
 export const query = graphql`
 	query($slug: String!) {
@@ -97,4 +111,4 @@ export const query = graphql`
 	}
 `;
 
-export default workTemplate;
+export default WorkTemplate;
