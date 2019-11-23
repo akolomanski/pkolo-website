@@ -116,7 +116,7 @@ const Contact = () => {
 		<div>
 			<GlobalStyles />
 			<StyledWrapper>
-				<button onClick={open}>O Autorze</button>
+				<button onClick={open}>Kontakt</button>
 
 				{transitions.map(
 					({ item, key, props: styles }) =>
