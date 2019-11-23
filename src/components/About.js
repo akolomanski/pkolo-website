@@ -28,20 +28,21 @@ const MyDialogContent = styled(DialogContent)`
 	
    
     p{
-        width: 50%;
+        width: 70%;
         font-size: 1.2rem;
         margin-top: 1em;
+		padding-right: 50px;
         
     }
 	.photoWrapper{
 		width: 100%;
 	}
     img{
-        width: 50%;
+        width: 30%;
         height: auto;
         max-height: 100%;
         object-fit: contain;
-       
+		
         
     }
     button{
@@ -58,9 +59,11 @@ const MyDialogContent = styled(DialogContent)`
 		flex-direction: column-reverse;
 		text-align: center;
 		img{
-			width: 50px;
+			padding: 20px;
+			
 		}
 		p{
+			margin-top: -20px;
 			width: 100%;
 			padding: 20px;
 			text-align: left;
