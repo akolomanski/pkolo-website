@@ -23,8 +23,21 @@ const StyledWrapper = styled.div`
 			.container{
 				display: flex;
 				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.item{
+				margin-bottom: 50px;
 			}
 		}
+	@media only screen and (max-width: 400px){
+		.container{
+			padding: 0;
+			img{
+				height: 200px;
+			}
+		}
+	}
 `;
 
 const Works = () => (

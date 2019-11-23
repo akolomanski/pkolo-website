@@ -48,7 +48,7 @@ const StyledWrapper = styled.div`
 		}
 		a{
 			top: 45px;
-			left: 45%;
+			left: 40vw;
 		}
 	}
 `;

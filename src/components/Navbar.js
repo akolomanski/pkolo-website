@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
 		align-items: center;
 		max-width: 300px;
 		margin-top: 0;
-		
+		padding: 0;
 		
         
 	}
