@@ -40,6 +40,8 @@ const StyledWrapper = styled.div`
 	@media only screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
 		grid-gap: 50px;
+		margin-right: 30px;
+		margin-left: 30px;
 		.container {
 			font-size: 1.5em;
 		}
@@ -49,6 +51,9 @@ const StyledWrapper = styled.div`
 		a{
 			top: 45px;
 			left: 40vw;
+		}
+		.photo{
+			width: 100%;
 		}
 	}
 `;
