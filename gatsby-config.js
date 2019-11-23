@@ -24,7 +24,7 @@ module.exports = {
       options: {
         useMozJpeg: true,
         stripMetadata: true,
-        defaultQuality: 100,
+        defaultQuality: 80,
       },
     },
     {
