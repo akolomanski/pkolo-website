@@ -43,7 +43,7 @@ const StyledWrapper = styled.div`
 		background-position: 5% 90%;
 	}
 	@media only screen and (max-width: 400px) {
-		font-size: 5vw;
+		font-size: 4.6vw;
 		background-size: 80%;
 		background-position: 10% 90%;
 	}
