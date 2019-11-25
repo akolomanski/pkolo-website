@@ -14,7 +14,7 @@ const StyledWrapper = styled.div`
 	font-size: 2.5vw;
 	background-image: url(${backgroundImage});
 	background-color: #444444;
-	background-position: 3% 90%;
+	background-position: 10% 90%;
 	background-repeat: no-repeat;
 	background-size: 30%;
 	.flex-container {
@@ -39,11 +39,11 @@ const StyledWrapper = styled.div`
 
 	@media only screen and (max-width: 800px) {
 		font-size: 4.0vw;
-		background-size: 60%;
+		background-size: 45%;
 		background-position: 5% 90%;
 	}
 	@media only screen and (max-width: 400px) {
-		font-size: 5.5vw;
+		font-size: 5vw;
 		background-size: 80%;
 		background-position: 10% 90%;
 	}
