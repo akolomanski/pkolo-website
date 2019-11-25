@@ -77,6 +77,8 @@ const WorkTemplate = ({ data: { work } }) => {
 						<div className="photo">
 							<Link to="/works">Wstecz</Link>
 							<h2>{work.title}</h2>
+							<p>{work.size}</p>
+							<p>{work.technique}</p>
 							<p>{work.description.description}</p>
 						</div>
 					</div>
@@ -101,6 +103,8 @@ export const query = graphql`
 			description {
 				description
 			}
+			size
+			technique
 			title
 			photos {
 				fluid {
